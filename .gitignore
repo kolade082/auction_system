@@ -1,0 +1,41 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+/vendor/
+/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Keep all public files
+public/*
+!public/
+!public/css/
+!public/css/*
+!public/images/
+!public/images/*
+!public/images/auctions/
+!public/images/auctions/*
+!public/images/lots/
+!public/images/lots/*
+!public/banners/
+!public/banners/*
+!public/layouts/
+!public/layouts/*
+!public/*.php
