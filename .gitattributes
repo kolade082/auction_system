@@ -1,0 +1,34 @@
+ # Auto detect text files and perform LF normalization
+* text=auto
+
+# PHP files
+*.php linguist-language=PHP
+*.phtml linguist-language=PHP
+
+# CSS files
+*.css linguist-language=CSS
+
+# JavaScript files
+*.js linguist-language=JavaScript
+
+# SQL files
+*.sql linguist-language=SQL
+
+# Docker files
+Dockerfile linguist-language=Dockerfile
+docker-compose.yml linguist-language=YAML
+
+# Documentation
+*.md linguist-documentation
+LICENSE linguist-documentation
+
+# Exclude vendor directories from language statistics
+vendor/* linguist-vendored
+node_modules/* linguist-vendored
+
+# Mark public directory as PHP project
+public/* linguist-language=PHP
+
+# Explicitly mark certain files as not documentation
+public/*.php -linguist-documentation
+public/layouts/*.php -linguist-documentation
