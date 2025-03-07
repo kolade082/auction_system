@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./apache.conf:/etc/apache2/conf-available/apache.conf
+    command: >
+      bash -c "a2enconf apache &&
+               apache2-foreground"
+    depends_on:
+      - db
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: as1csy2028
+      MYSQL_USER: v.je
+      MYSQL_PASSWORD: v.je
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
